@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import DrinkScreen from "./DrinkScreen"
 import { useNavigation } from '@react-navigation/native';
+import DrinkScreen from "./DrinkScreen"
 
 const events = [
-    { id: "1", title: "Nikitha's Rat Street Bash", date: "Feb 2, 2025", time: "8:00 PM" },
+    { id: "1", title: "Nikhita's Rat Street Bash", date: "Feb 2, 2025", time: "8:00 PM" },
     { id: "2", title: "Cocktail Tasting", date: "Feb 5, 2025", time: "7:30pm"},
     { id: "3", title: "Kavin's Guys Night Out", date: "Feb 10, 2025", time: "6:30pm"},
 ];
@@ -21,7 +21,7 @@ const EventScreen = () => {
                 renderItem={({ item }) => (
                     <TouchableOpacity
                       style={styles.eventBlock}
-                      onPress={() => navigation.navigate("DrinkScreen", { event: item })}
+                      onPress={() => navigation.navigate('DrinkScreen')}
                     >
                       <Text style={styles.eventTitle}>{item.title}</Text>
                       <Text style={styles.eventDetails}>

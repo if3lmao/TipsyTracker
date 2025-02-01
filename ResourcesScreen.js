@@ -17,7 +17,7 @@ const resources = [
     },
 ];
 
-const HelpfulResources = () => {
+const ResourcesScreen = () => {
     const [expanded, setExpanded] = useState(null); //keep track of which sections are expanded
 
     return (
@@ -31,7 +31,7 @@ const HelpfulResources = () => {
                     onPress={() => setExpanded(expanded === index ? null : index)}
                 >
                     {section.links.map((link, linkIndex)=> (
-                        <List.item
+                        <List.Item
                             key={linkIndex}
                             title = {link.text}
                             onPress={() => Linking.openURL(link.url)}
@@ -43,7 +43,7 @@ const HelpfulResources = () => {
     );
 };
 
-const styles = StylesSheet.create({
+const styles = StyleSheet.create ({
     container:{
         flex:1,
         padding: 16,
@@ -51,7 +51,7 @@ const styles = StylesSheet.create({
     header:{
         fontSize: 24,
         fontWeight: 'bold',
-        marginBotoom: 16,
+        marginBottom: 16,
         textAlign: 'center',
     },
 });

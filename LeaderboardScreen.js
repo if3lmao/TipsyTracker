@@ -14,9 +14,17 @@ const LeaderboardScreen = () => {
   const safetyReminders = [
     'Drink water between alcoholic drinks to stay hydrated!',
     'Pace yourself: Drink no more than one standard drink per hour.',
+    'Don’t mix alcohol with prescription medication or other substances.',
     'Don’t drink and drive – Always have a safe ride home!',
     'Know your limits and don’t feel pressured to drink more.',
     'Make sure you eat before drinking to avoid over-consumption.',
+    'Always drink responsibly and know your limits.',
+    'It’s okay to say no to another drink if you feel uncomfortable.',
+    'If you’re feeling unwell, stop drinking and seek help if necessary.',
+    'Monitor your drink to ensure it’s not tampered with.',
+    'If you’re in a group, look out for each other and be aware of everyone’s condition.',
+    'If you need help, don’t hesitate to call a friend or a taxi.',
+    'Plan ahead for transportation-don’t drive under the influence.'
   ];
 
   const [currentReminderIndex, setCurrentReminderIndex] = useState(0);
@@ -34,7 +42,7 @@ const LeaderboardScreen = () => {
       {/* Safety Reminder Section */}
       <View style={styles.reminderContainer}>
         <Text style={styles.reminderText}>{safetyReminders[currentReminderIndex]}</Text>
-        <Button title="Get Safety Tip" onPress={getNewReminder} />
+        <Button title="Click for more Safety Tips" onPress={getNewReminder} />
       </View>
 
       {/* Leaderboard List */}

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-
+import { createStackNavigator } from "@react-navigation/stack";
 // Screens
 import MapScreen from './MapScreen';
 import ProfileScreen from './ProfileScreen';
@@ -19,11 +19,14 @@ import ResourcesScreen from './ResourcesScreen';
 //   </View>
 // );
 
+const Stack = createStackNavigator();
+
 function EventStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Events" component={EventScreen} options={{ title: "Tipsy Tracker" }} />
       <Stack.Screen name="DrinkScreen" component={DrinkScreen} options={{ title: "Log Your Drink" }} />
+      <Stack.Screen name="ResourceScreen" component={ResourceScreen} options={{ title: "Helpful Resources" }} />
     </Stack.Navigator>
   );
 }
