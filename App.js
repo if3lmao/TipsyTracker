@@ -66,7 +66,7 @@ export default function App() {
       >
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Leaderboard" component={LeaderboardScreen} />
-        <Tab.Screen name="Events" component={EventScreen} />
+        <Tab.Screen name="Events" component={EventScreen} options = {{title: "Tipsy Tracker"}} />
         <Tab.Screen name="Resources" component={ResourcesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
