@@ -4,32 +4,25 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import { createStackNavigator } from "@react-navigation/stack";
-// Screens
 import MapScreen from './MapScreen';
 import ProfileScreen from './ProfileScreen';
 import LeaderboardScreen from './LeaderboardScreen';
 import EventScreen from './EventScreen';
 import DrinkScreen from "./DrinkScreen"
 import ResourcesScreen from './ResourcesScreen';
-
-// const ResourcesScreen = () => (
-//   <View style={styles.container}>
-//     <Text>This is my resources</Text>
-//   </View>
-// );
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
 
 function EventStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Events" component={EventScreen} options={{ title: "Tipsy Tracker" }} />
+      <Stack.Screen name="Events" component={EventScreen} options={{ title: "Tipsy Tracker"}}/>
       <Stack.Screen name="DrinkScreen" component={DrinkScreen} options={{ title: "Log Your Drink" }} />
-      <Stack.Screen name="ResourceScreen" component={ResourceScreen} options={{ title: "Helpful Resources" }} />
     </Stack.Navigator>
   );
 }
+
 // Create Bottom Tab Navigator
 const Tab = createBottomTabNavigator();
 
@@ -61,7 +54,7 @@ export default function App() {
       >
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Leaderboard" component={LeaderboardScreen} />
-        <Tab.Screen name="Events" component={EventScreen} />
+        <Tab.Screen name="Events" component={EventStack} />
         <Tab.Screen name="Resources" component={ResourcesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>

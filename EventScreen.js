@@ -21,7 +21,7 @@ const EventScreen = () => {
                 renderItem={({ item }) => (
                     <TouchableOpacity
                       style={styles.eventBlock}
-                      onPress={() => navigation.navigate('DrinkScreen')}
+                      onPress={() => navigation.navigate("DrinkScreen")}
                     >
                       <Text style={styles.eventTitle}>{item.title}</Text>
                       <Text style={styles.eventDetails}>

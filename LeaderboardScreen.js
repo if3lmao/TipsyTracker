@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, Button } from 'react-native';
 
+//Mock data for leaderboard
 const LeaderboardScreen = () => {
   const [leaderboardData] = useState([
-    { id: '1', name: 'Wabona', drinks: 6, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '2', name: 'Ife', drinks: 5, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
+    { id: '1', name: 'Nikhita', drinks: 2, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
+    { id: '2', name: 'Ifemi', drinks: 3, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
     { id: '3', name: 'Kavin', drinks: 4, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '4', name: 'Ifemi', drinks: 3, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '5', name: 'Nikhita', drinks: 2, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
+    { id: '4', name: 'Ife', drinks: 5, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
+    { id: '5', name: 'Wabona', drinks: 6, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
   ]);
 
-  // Mock data for safety reminders
+  //Mock data for safety reminders
   const safetyReminders = [
     'Drink water between alcoholic drinks to stay hydrated!',
     'Pace yourself: Drink no more than one standard drink per hour.',
@@ -29,7 +30,7 @@ const LeaderboardScreen = () => {
 
   const [currentReminderIndex, setCurrentReminderIndex] = useState(0);
 
-  // Function to get a new reminder when the button is pressed
+  //Function to get a new tip everytime the button is clicked
   const getNewReminder = () => {
     const randomIndex = Math.floor(Math.random() * safetyReminders.length);
     setCurrentReminderIndex(randomIndex);
@@ -45,7 +46,7 @@ const LeaderboardScreen = () => {
         <Button title="Click for more Safety Tips" onPress={getNewReminder} />
       </View>
 
-      {/* Leaderboard List */}
+      {/* Leaderboard List -- Rank, name, profile picture, score/number of drinks */}
       <FlatList
         data={leaderboardData}
         renderItem={({ item, index }) => (
