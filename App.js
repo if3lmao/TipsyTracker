@@ -8,6 +8,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 // Screens
 import MapScreen from './MapScreen';
 import ProfileScreen from './ProfileScreen';
+import ResourcesScreen from './ResourcesScreen';
 
 const LeaderboardScreen = () => (
   <View style={styles.container}>
@@ -21,11 +22,11 @@ const EventScreen = () => (
   </View>
 );
 
-const ResourcesScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my resources</Text>
-  </View>
-);
+// const ResourcesScreen = () => (
+//   <View style={styles.container}>
+//     <Text>This is my resources</Text>
+//   </View>
+// );
 
 // Create Bottom Tab Navigator
 const Tab = createBottomTabNavigator();
