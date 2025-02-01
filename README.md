@@ -1,2 +1,0 @@
-# TipsyTracker
-hackathon repo 
