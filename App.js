@@ -6,11 +6,8 @@ import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 // Screens
-const MapScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my map</Text>
-  </View>
-);
+import MapScreen from './MapScreen';
+import ProfileScreen from './ProfileScreen';
 
 const LeaderboardScreen = () => (
   <View style={styles.container}>
@@ -27,12 +24,6 @@ const EventScreen = () => (
 const ResourcesScreen = () => (
   <View style={styles.container}>
     <Text>This is my resources</Text>
-  </View>
-);
-
-const ProfileScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my profile</Text>
   </View>
 );
 
