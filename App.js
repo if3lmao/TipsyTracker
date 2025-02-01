@@ -11,12 +11,13 @@ import ProfileScreen from './ProfileScreen';
 import LeaderboardScreen from './LeaderboardScreen';
 import EventScreen from './EventScreen';
 import DrinkScreen from "./DrinkScreen"
+import ResourcesScreen from './ResourcesScreen';
 
-const ResourcesScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my resources</Text>
-  </View>
-);
+// const ResourcesScreen = () => (
+//   <View style={styles.container}>
+//     <Text>This is my resources</Text>
+//   </View>
+// );
 
 function EventStack() {
   return (
