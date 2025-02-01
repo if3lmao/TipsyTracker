@@ -8,18 +8,9 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 // Screens
 import MapScreen from './MapScreen';
 import ProfileScreen from './ProfileScreen';
-
-const LeaderboardScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my leaderboard</Text>
-  </View>
-);
-
-const EventScreen = () => (
-  <View style={styles.container}>
-    <Text>This is my event</Text>
-  </View>
-);
+import LeaderboardScreen from './LeaderboardScreen';
+import EventScreen from './EventScreen';
+import DrinkScreen from "./DrinkScreen"
 
 const ResourcesScreen = () => (
   <View style={styles.container}>
@@ -27,6 +18,14 @@ const ResourcesScreen = () => (
   </View>
 );
 
+function EventStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Events" component={EventScreen} options={{ title: "Tipsy Tracker" }} />
+      <Stack.Screen name="DrinkScreen" component={DrinkScreen} options={{ title: "Log Your Drink" }} />
+    </Stack.Navigator>
+  );
+}
 // Create Bottom Tab Navigator
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +35,7 @@ export default function App() {
       <Tab.Navigator
       initialRouteName='Events' // Default start page to events
         screenOptions={({ route }) => ({
+          headerTitle: "Tipsy Tracker",
           tabBarIcon: ({ color, size }) => {
             if (route.name === 'Map') {
               return <FontAwesomeIcon name="map" size={size} color={color} />;
@@ -57,7 +57,7 @@ export default function App() {
       >
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Leaderboard" component={LeaderboardScreen} />
-        <Tab.Screen name="Events" component={EventScreen} options = {{title: "Tipsy Tracker"}} />
+        <Tab.Screen name="Events" component={EventScreen} />
         <Tab.Screen name="Resources" component={ResourcesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
