@@ -17,7 +17,7 @@ const resources = [
     },
 ];
 
-const HelpfulResources = () => {
+const ResourcesScreen = () => {
     const [expanded, setExpanded] = useState(null); //keep track of which sections are expanded
 
     return (
@@ -43,7 +43,7 @@ const HelpfulResources = () => {
     );
 };
 
-const styles = StylesSheet.create({
+const styles = StyleSheet.create({
     container:{
         flex:1,
         padding: 16,
