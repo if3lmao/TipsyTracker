@@ -4,11 +4,11 @@ import { View, Text, FlatList, StyleSheet, Image, Button } from 'react-native';
 //Mock data for leaderboard
 const LeaderboardScreen = () => {
   const [leaderboardData] = useState([
-    { id: '1', name: 'Nikhita', drinks: 2, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '2', name: 'Ifemi', drinks: 3, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '3', name: 'Kavin', drinks: 4, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '4', name: 'Ife', drinks: 5, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
-    { id: '5', name: 'Wabona', drinks: 6, profilePic: 'https://static.vecteezy.com/system/resources/previews/009/637/570/non_2x/red-wine-drink-glass-cute-cartoon-file-png.png' },
+    { id: '1', name: 'Nikhita', drinks: 2, profilePic: 'https://t4.ftcdn.net/jpg/02/60/12/53/360_F_260125376_MQqe2h3iHkdhp57cKLBbLzU6hpq59VoM.jpg' },
+    { id: '2', name: 'Ifemi', drinks: 3, profilePic: 'https://t4.ftcdn.net/jpg/02/60/12/53/360_F_260125376_MQqe2h3iHkdhp57cKLBbLzU6hpq59VoM.jpg' },
+    { id: '3', name: 'Kavin', drinks: 4, profilePic: 'https://t4.ftcdn.net/jpg/02/60/12/53/360_F_260125376_MQqe2h3iHkdhp57cKLBbLzU6hpq59VoM.jpg' },
+    { id: '4', name: 'Ife', drinks: 5, profilePic: 'https://t4.ftcdn.net/jpg/02/60/12/53/360_F_260125376_MQqe2h3iHkdhp57cKLBbLzU6hpq59VoM.jpg' },
+    { id: '5', name: 'Wabona', drinks: 6, profilePic: 'https://t4.ftcdn.net/jpg/02/60/12/53/360_F_260125376_MQqe2h3iHkdhp57cKLBbLzU6hpq59VoM.jpg' },
   ]);
 
   //Mock data for safety reminders
