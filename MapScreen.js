@@ -64,18 +64,34 @@ const MapScreen = () => {
       {/* User List (Bottom Half) */}
       <FlatList
         data={mockUsers}
-        keyExtractor={(item) => item.id.toString()}
-        style={styles.list}
-        renderItem={({ item }) => (
-          <View style={styles.userCard}>
-            <View>
-              <Text style={styles.userName}>{item.name}</Text>
-              <Text style={styles.userLocation}>{item.city} • 3 mi</Text> 
-            </View>
-            <Text style={styles.bacText}>{calculateBAC(item.drinks)}% BAC</Text>
-          </View>
-        )}
-      />
+  keyExtractor={(item) => item.id.toString()}
+  style={styles.list}
+  renderItem={({ item }) => {
+    // Calculate BAC value
+    const bac = calculateBAC(item.drinks);
+    let bacColor = "#e63946";  // Default red color
+
+    // Adjust color based on BAC value
+    if (bac < 0.4) {
+      bacColor = "green";
+    } else if (bac >= 0.5 && bac < 1.0) {
+      bacColor = "yellow";
+    }
+
+    return (
+      <View style={styles.userCard}>
+        <View>
+          <Text style={styles.userName}>{item.name}</Text>
+          <Text style={styles.userLocation}>{item.city} • 3 mi</Text>
+        </View>
+        {/* Apply the dynamic color */}
+        <Text style={[styles.bacText, { color: bacColor }]}>
+          {bac}% BAC
+        </Text>
+      </View>
+    );
+  }}
+/>
     </View>
   );
 };

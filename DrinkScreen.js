@@ -9,6 +9,7 @@ const DrinkScreen = () => {
     beer: 0,
     liquor: 0,
     seltzer: 0,
+    nonalcoholic: 0,
   });
 
   const [friends, setFriends] = useState([]);
@@ -76,9 +77,9 @@ const DrinkScreen = () => {
       <Modal visible={confirmVisible} transparent animationType="fade">
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.confirmationText}>{addedFriend} has been added to the party! 🎉</Text>
-            <TouchableOpacity style={styles.confirmButton} onPress={() => setConfirmVisible(false)}>
-              <Text style={styles.confirmButtonText}>OK</Text>
+            <Text style={styles.okButtonText}>{addedFriend} has been added to the party! 🎉</Text>
+            <TouchableOpacity style={styles.okButton} onPress={() => setConfirmVisible(false)}>
+              <Text style={styles.okButtonText}>X</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -103,8 +104,8 @@ const DrinkScreen = () => {
                         <Text style={styles.noPartyMembers}>No friends added yet.</Text>
                     )}
                     </ScrollView>
-                    <TouchableOpacity style={styles.confirmButton} onPress={() => setPartyModalVisible(false)}>
-                    <Text style={styles.confirmButtonText}>Close</Text>
+                    <TouchableOpacity style={styles.okButton} onPress={() => setPartyModalVisible(false)}>
+                      <Text style={styles.okButtonText}>X</Text>
                     </TouchableOpacity>
                 </View>
                 </View>
@@ -134,6 +135,12 @@ const DrinkScreen = () => {
         <TouchableOpacity style={styles.button} onPress={() => handlePress("seltzer")}>
           <Image source={require("./drinks/seltzer.png")} style={styles.image} />
           <Text style={styles.quantity}>Count: {quantities.seltzer}</Text>
+        </TouchableOpacity>
+
+        {/* Non-Alcoholic Drinks */}
+        <TouchableOpacity style={styles.button} onPress={() => handlePress("nonalcoholic")}>
+          <Image source={require("./drinks/nonalcoholic.png")} style={styles.image} />
+          <Text style={styles.quantity}>Count: {quantities.nonalcoholic}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -212,6 +219,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
+  okButton: {
+    backgroundColor: "#4CAF50", // Keep it green
+    paddingVertical: 15, // Increase padding for better clickability
+    paddingHorizontal: 30,
+    borderRadius: 8, // Rounded corners
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 15,
+    width: 90, // Increase width
+    height: 50, // Increase height
+  },
   cancelButtonText: {
     color: "white",
     fontWeight: "bold",
@@ -219,6 +237,12 @@ const styles = StyleSheet.create({
   confirmButtonText: {
     color: "white",
     fontWeight: "bold",
+  },
+  okButtonText: {
+    color: "black", // Ensure white text for contrast
+    fontSize: 16, // Make text bigger
+    fontWeight: "bold",
+    textAlign: "center",
   },
   grid: {
     width: "90%",
@@ -236,8 +260,8 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   image: {
-    width: 80,
-    height: 110,
+    width: 60,
+    height: 80,
   },
   quantity: {
     fontSize: 14,
